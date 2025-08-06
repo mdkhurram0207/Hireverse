@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Uploaded resumes or other files
+uploads/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

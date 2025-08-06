@@ -1,0 +1,27 @@
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+
+const clientRoutes = require('./routes/clientRoutes');
+const candidateRoutes = require('./routes/candidateRoutes');
+const jobRoutes = require('./routes/jobRoutes');
+const emailRoutes = require('./routes/emailRoutes');
+
+dotenv.config();
+connectDB();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use('/uploads', express.static('uploads')); // For resumes
+
+// Routes (api)
+app.use('/api/clients', clientRoutes);   //http://localhost:4000/api/clients/
+app.use('/api/candidates', candidateRoutes);   http://localhost:4000/api/candidates/
+app.use('/api/jobs', jobRoutes);   http://localhost:4000/api/jobs/
+app.use('/api', emailRoutes);
+
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
