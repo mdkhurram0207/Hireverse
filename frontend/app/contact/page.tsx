@@ -3,8 +3,48 @@ import { motion } from "framer-motion";
 import { TfiEmail } from "react-icons/tfi";
 import { BsWhatsapp } from "react-icons/bs";
 import { Linkedin, Globe, Send } from "lucide-react";
+import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        "service_7vh4hds", // EmailJS Service ID
+        "template-cgufiyw", // EmailJS Template ID
+        formRef.current, // form reference
+        "IZ184kvgVqiO2TnZ" // EmailJS Public Key
+      );
+
+      alert("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      alert("⚠ Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const contactMethods = [
     {
       icon: <TfiEmail className="text-blue-400 text-lg" />,
@@ -101,33 +141,40 @@ export default function ContactPage() {
 
         {/* Right: Contact Form */}
         <motion.form
+          ref={formRef}
           className="bg-zinc-900 shadow-xl rounded-xl p-8 space-y-6"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Thank you for reaching out!");
-          }}
+          onSubmit={handleSubmit}
         >
           <h2 className="text-2xl font-bold text-blue-400 mb-4">Send Us a Message</h2>
 
           <div className="space-y-4">
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               required
               placeholder="Full Name"
               className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
             />
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               required
               placeholder="Email Address"
               className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
             />
             <textarea
               rows={5}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               required
               placeholder="How can we help you?"
               className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
@@ -136,9 +183,10 @@ export default function ContactPage() {
 
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-lg hover:opacity-90 transition font-semibold text-lg shadow-md hover:shadow-lg"
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </motion.form>
       </div>

@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 const clientSchema = new mongoose.Schema({
-  companyName: String,
-  contactPerson: String,
+  name: String,
+  company: String,
   email: String,
   phone: String,
-  industry: String,
-  message: String,
+  role: String,
   createdAt: { type: Date, default: Date.now },
 });
 
