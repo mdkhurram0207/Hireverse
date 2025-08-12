@@ -7,7 +7,7 @@ const path = require('path');
 const clientRoutes = require('./routes/clientRoutes');
 const candidateRoutes = require('./routes/candidateRoutes');
 const jobRoutes = require('./routes/jobRoutes');
-const emailRoutes = require('./routes/emailRoutes');
+
 
 dotenv.config();
 connectDB();
@@ -21,7 +21,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));// For resu
 app.use('/api/clients', clientRoutes);   //http://localhost:4000/api/clients/
 app.use('/api/candidates', candidateRoutes);   http://localhost:4000/api/candidates/
 app.use('/api/jobs', jobRoutes);   http://localhost:4000/api/jobs/
-// app.use('/api', emailRoutes);
+
 
 
 
