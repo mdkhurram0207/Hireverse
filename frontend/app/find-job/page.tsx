@@ -15,7 +15,6 @@ import {
 export default function FindJobPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0f0f0f] via-[#1c1c1c] to-[#2a2a2a] px-4 py-8 text-gray-100">
-      {/* Header */}
       <motion.div
         className="max-w-5xl mx-auto mb-16 text-center"
         initial={{ opacity: 0, y: -30 }}
@@ -31,9 +30,7 @@ export default function FindJobPage() {
         </p>
       </motion.div>
 
-      {/* Grid Section */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Roles and Benefits */}
         <motion.section
           className="bg-[#1a1a1a] p-8 rounded-xl shadow-md border border-gray-800"
           initial={{ opacity: 0, x: -40 }}
@@ -82,7 +79,6 @@ export default function FindJobPage() {
           </ul>
         </motion.section>
 
-        {/* Right: Candidate Form */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
