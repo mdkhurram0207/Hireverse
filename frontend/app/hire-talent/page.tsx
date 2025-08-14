@@ -2,17 +2,11 @@
 
 import HireForm from "@/app/components/HireForm";
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  CloudLightning,
-  BadgeCheck,
-  Brain,
-} from "lucide-react";
+import { ShieldCheck, CloudLightning, BadgeCheck, Brain } from "lucide-react";
 
 export default function HireTalentPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0f0f0f] via-[#1c1c1c] to-[#2a2a2a] px-4 py-8 text-gray-100">
-      {/* Header */}
       <motion.div
         className="max-w-5xl mx-auto mb-16 text-center"
         initial={{ opacity: 0, y: -30 }}
@@ -20,17 +14,14 @@ export default function HireTalentPage() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl md:text-4xl font-bold leading-snug text-white">
-          Looking to Hire?{" "}
-          <span className="text-blue-500">We’ve Got You Covered.</span>
+          Looking to Hire? <span className="text-blue-500">We’ve Got You Covered.</span>
         </h1>
         <p className="mt-4 text-lg md:text-xl text-gray-300">
           Speed. Screening. Compliance. Let us find the right talent for your success.
         </p>
       </motion.div>
 
-      {/* Grid Section */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Vetting Process */}
         <motion.section
           className="bg-[#1a1a1a] p-8 rounded-xl shadow-md border border-gray-800"
           initial={{ opacity: 0, x: -40 }}
@@ -61,7 +52,6 @@ export default function HireTalentPage() {
           </ul>
         </motion.section>
 
-        {/* Right: Form */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
