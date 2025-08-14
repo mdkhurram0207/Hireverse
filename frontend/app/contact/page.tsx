@@ -1,32 +1,38 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { TfiEmail } from "react-icons/tfi";
 import { BsWhatsapp } from "react-icons/bs";
 import { Linkedin, Globe, Send } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import emailjs from "emailjs-com";
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
 
   const [loading, setLoading] = useState(false);
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null); // ✅ Typed ref
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
+    if (!formRef.current) return;
 
+    setLoading(true);
     try {
       await emailjs.sendForm(
         "service_7vh4hds", // EmailJS Service ID
