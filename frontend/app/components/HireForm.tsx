@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { API } from "../../utils/api";
 import toast, { Toaster } from "react-hot-toast";
@@ -13,7 +14,7 @@ export default function HireForm() {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -26,19 +27,19 @@ export default function HireForm() {
     return null;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const errorMsg = validateForm();
     if (errorMsg) {
       toast.error(errorMsg, {
         style: {
-          background: "#1e3a8a", // dark blue
+          background: "#1e3a8a",
           color: "#fff",
           fontWeight: "bold",
         },
         iconTheme: {
-          primary: "#3b82f6", // blue icon
+          primary: "#3b82f6",
           secondary: "#fff",
         },
       });
@@ -72,7 +73,7 @@ export default function HireForm() {
         phone: "",
         role: "",
       });
-    } catch (error) {
+    } catch (error: any) {
       toast.error(error.response?.data?.message || "Error submitting request!", {
         style: {
           background: "#1e3a8a",
