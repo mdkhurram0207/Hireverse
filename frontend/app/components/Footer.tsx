@@ -2,26 +2,26 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-neutral-600 pt-10 pb-8 px-6 border-t border-neutral-200 mt-10">
+    <footer className="bg-gradient-to-b from-black via-slate-950 to-black text-slate-300 pt-10 pb-8 px-6 border-t border-white/5 mt-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         {/* Branding */}
         <div className="text-center md:text-left">
-          <h3 className="text-2xl font-semibold text-neutral-900 tracking-tight">
+          <h3 className="text-2xl font-semibold text-gray-50 tracking-tight">
             Hireverse Global
           </h3>
-          <p className="text-neutral-500 mt-2 italic text-sm">
+          <p className="text-slate-400 mt-2 italic text-sm">
             Empowering Your Workforce
           </p>
         </div>
 
         {/* Contact Info */}
         <div className="text-center">
-          <h4 className="text-sm font-semibold text-neutral-500 uppercase mb-2 tracking-wide">
+          <h4 className="text-sm font-semibold text-slate-400 uppercase mb-2 tracking-wide">
             Contact
           </h4>
           <a
             href="mailto:contact@hireverseglobal.in"
-            className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
+            className="block text-sm text-slate-200 hover:text-white transition-colors"
           >
             contact@hireverseglobal.in
           </a>
@@ -29,7 +29,7 @@ export default function Footer() {
             href="https://t.me/Hireverseglobal"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+            className="block text-sm text-slate-200 hover:text-white transition-colors mt-1"
           >
             Telegram: @Hireverseglobal
           </a>
@@ -37,7 +37,7 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div className="text-center lg:text-right">
-          <h4 className="text-sm font-semibold text-neutral-500 uppercase mb-2 tracking-wide">
+          <h4 className="text-sm font-semibold text-slate-400 uppercase mb-2 tracking-wide">
             Follow Us
           </h4>
           <div className="flex justify-center lg:justify-end gap-6 mt-2">
@@ -67,7 +67,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={icon.label}
-                className="text-neutral-500 hover:text-neutral-900 transition-colors duration-200"
+                className="text-slate-400 hover:text-white transition-colors duration-200"
               >
                 <svg
                   width="22"
@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Notice */}
-      <div className="mt-8 border-t border-neutral-200 pt-5 text-center text-xs text-neutral-500 select-none">
+      <div className="mt-8 border-t border-white/5 pt-5 text-center text-xs text-slate-500 select-none">
         &copy; {new Date().getFullYear()} Hireverse Global. All rights reserved.
       </div>
     </footer>

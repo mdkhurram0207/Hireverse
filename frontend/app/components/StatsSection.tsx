@@ -33,7 +33,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="bg-white text-neutral-900 py-12 px-4 border-b border-neutral-200">
+    <section className="bg-gradient-to-b from-black via-slate-950 to-black text-gray-100 py-14 px-4 border-t border-b border-white/5">
       <motion.h2
         className="text-center text-3xl md:text-4xl font-semibold mb-8 tracking-tight"
         initial={{ opacity: 0, y: 20 }}
@@ -54,16 +54,16 @@ const StatsSection = () => {
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
-            className="bg-white border border-neutral-200 rounded-lg px-4 py-6 text-center shadow-sm"
+            className="bg-slate-900/70 border border-white/10 rounded-xl px-4 py-6 text-center shadow-lg shadow-black/40"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.12, duration: 0.4 }}
           >
             <div className="flex justify-center mb-2">{stat.icon}</div>
-            <div className="text-2xl font-semibold text-neutral-900">
+            <div className="text-2xl font-semibold text-slate-50">
               <AnimatedCount value={stat.value} suffix={stat.suffix} />
             </div>
-            <p className="mt-1 text-xs text-neutral-500 uppercase tracking-wide">
+            <p className="mt-1 text-xs text-slate-300 uppercase tracking-wide">
               {stat.label}
             </p>
           </motion.div>

@@ -30,12 +30,12 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0d0d0d] via-[#1a1a1a] to-[#2a2a2a] px-4 md:px-12 py-16 text-white font-sans">
+    <main className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-black px-4 md:px-12 py-16 text-gray-100 font-sans">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-slate-100 via-slate-300 to-slate-100 bg-clip-text text-transparent"
       >
         Industries We Serve
       </motion.h1>
@@ -59,20 +59,21 @@ export default function IndustriesPage() {
               />
             </div>
 
-            <div className="md:w-1/2 bg-[#1c1c1c] text-white p-8 rounded-xl shadow-lg space-y-5 border border-gray-800">
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <div className="md:w-1/2 bg-slate-900/80 text-gray-100 p-8 rounded-xl shadow-xl space-y-5 border border-white/10">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-50">
                 {industry.title}
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-slate-200 text-lg leading-relaxed">
                 {industry.description}
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 hover:from-sky-500 hover:to-indigo-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transform transition duration-300 hover:bg-white hover:text-black hover:scale-105"
+              <motion.a
+                href="/hire-talent"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 px-7 py-2.5 text-sm font-medium text-gray-900 shadow-md shadow-black/40 hover:from-white hover:to-slate-200 transition-colors"
               >
                 Hire Talent
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         ))}

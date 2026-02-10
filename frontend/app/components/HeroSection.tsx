@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white text-neutral-900 py-20 px-6 border-b border-neutral-200">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="relative overflow-hidden py-24 px-6 text-gray-100">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-950" />
+      <div className="pointer-events-none absolute inset-x-0 -top-40 h-80 bg-gradient-to-b from-white/10 via-transparent to-transparent blur-3xl opacity-40" />
+
+      <div className="relative max-w-5xl mx-auto text-center">
         <motion.h1
           className="text-4xl md:text-5xl font-semibold mb-4 leading-tight tracking-tight"
           initial={{ opacity: 0, y: 40 }}
@@ -16,7 +19,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="text-base md:text-lg text-neutral-600 mb-8 max-w-2xl mx-auto"
+          className="text-base md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
@@ -32,7 +35,7 @@ const HeroSection = () => {
         >
           <motion.a
             href="/hire-talent"
-            className="inline-flex items-center justify-center rounded-md bg-neutral-900 px-7 py-3 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 px-8 py-3 text-sm font-medium text-gray-900 shadow-lg shadow-black/40 hover:from-white hover:to-slate-200 transition-colors"
             whileHover={{
               scale: 1.02,
             }}
@@ -43,7 +46,7 @@ const HeroSection = () => {
 
           <motion.a
             href="/find-job"
-            className="inline-flex items-center justify-center rounded-md border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-800 hover:bg-neutral-100 transition-colors"
+            className="inline-flex items-center justify-center rounded-full border border-slate-500/60 px-7 py-3 text-sm font-medium text-gray-100/90 bg-black/30 hover:bg-black/50 transition-colors"
             whileHover={{
               scale: 1.02,
             }}

@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans bg-neutral-50 text-neutral-900">
+      <body className="font-sans bg-gradient-to-b from-black via-slate-950 to-black text-gray-100">
         <Navbar />
         {children}
         <Footer />

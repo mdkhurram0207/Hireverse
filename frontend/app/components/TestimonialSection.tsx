@@ -36,7 +36,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-16 bg-neutral-50 border-t border-neutral-200 text-neutral-900">
+    <section className="py-16 bg-gradient-to-b from-black via-slate-950 to-black text-gray-100 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-center text-2xl md:text-3xl font-semibold mb-8 tracking-tight">
           What Our Clients &amp; Candidates Say
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              className="bg-white border border-neutral-200 rounded-lg p-5 text-sm shadow-sm"
+              className="bg-slate-900/80 border border-white/10 rounded-xl p-5 text-sm shadow-lg shadow-black/40"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,10 +57,10 @@ export default function TestimonialsSection() {
               }}
             >
               <div className="mb-3">
-                <div className="font-medium text-neutral-900">{t.name}</div>
-                <div className="text-xs text-neutral-500">{t.role}</div>
+                <div className="font-medium text-gray-50">{t.name}</div>
+                <div className="text-xs text-slate-300">{t.role}</div>
               </div>
-              <p className="text-neutral-700 leading-relaxed italic">"{t.text}"</p>
+              <p className="text-slate-200 leading-relaxed italic">"{t.text}"</p>
             </motion.div>
           ))}
         </div>

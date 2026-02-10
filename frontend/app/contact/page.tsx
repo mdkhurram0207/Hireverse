@@ -95,9 +95,9 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1f1f1f] via-[#3a3a3a] to-[#bcbcbc] text-white px-6 py-16">
+    <main className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-black text-gray-100 px-6 py-16">
       <motion.h1
-        className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text mb-4"
+        className="text-4xl font-extrabold text-center bg-gradient-to-r from-slate-100 via-slate-300 to-slate-100 text-transparent bg-clip-text mb-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -105,7 +105,7 @@ export default function ContactPage() {
         Let's Talk
       </motion.h1>
 
-      <p className="text-center text-gray-400 text-lg mb-14">
+      <p className="text-center text-slate-300 text-lg mb-14">
         Reach out to Hireverse Global — we're here to connect talent with opportunity.
       </p>
 
@@ -122,7 +122,7 @@ export default function ContactPage() {
             {contactMethods.map((method, idx) => (
               <div
                 key={idx}
-                className="flex items-center p-4 bg-zinc-800 rounded-lg shadow-sm hover:shadow-md transition hover:bg-zinc-700"
+                className="flex items-center p-4 bg-slate-900/80 rounded-xl shadow-md hover:shadow-xl transition hover:bg-slate-800/90 border border-white/10"
               >
                 <div
                   className={`flex-shrink-0 w-10 h-10 ${method.bgColor} rounded-full flex items-center justify-center`}
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   {method.icon}
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-white">{method.title}</h3>
+                  <h3 className="font-semibold text-slate-50">{method.title}</h3>
                   <a
                     href={method.href}
                     target="_blank"
@@ -148,14 +148,14 @@ export default function ContactPage() {
         {/* Right: Contact Form */}
         <motion.form
           ref={formRef}
-          className="bg-zinc-900 shadow-xl rounded-xl p-8 space-y-6"
+          className="bg-slate-950/90 shadow-2xl shadow-black/60 rounded-xl p-8 space-y-6 border border-white/10"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           onSubmit={handleSubmit}
         >
-          <h2 className="text-2xl font-bold text-blue-400 mb-4">Send Us a Message</h2>
+          <h2 className="text-2xl font-bold text-slate-50 mb-4">Send Us a Message</h2>
 
           <div className="space-y-4">
             <input
@@ -165,7 +165,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Full Name"
-              className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              className="w-full bg-black border border-slate-600 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-slate-300 outline-none"
             />
             <input
               type="email"
@@ -174,7 +174,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Email Address"
-              className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              className="w-full bg-black border border-slate-600 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-slate-300 outline-none"
             />
             <textarea
               rows={5}
@@ -183,14 +183,14 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="How can we help you?"
-              className="w-full bg-black border border-gray-700 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+              className="w-full bg-black border border-slate-600 text-white rounded-md px-4 py-3 focus:ring-2 focus:ring-slate-300 outline-none resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-lg hover:opacity-90 transition font-semibold text-lg shadow-md hover:shadow-lg"
+            className="w-full rounded-full bg-gradient-to-r from-slate-100 via-slate-300 to-slate-100 text-gray-900 py-3 hover:from-white hover:to-slate-200 transition font-semibold text-lg shadow-lg shadow-black/50 disabled:opacity-70"
           >
             {loading ? "Sending..." : "Submit"}
           </button>

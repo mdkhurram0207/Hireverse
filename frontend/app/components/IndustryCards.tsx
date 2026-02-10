@@ -24,12 +24,12 @@ const IndustryCards = () => {
   ];
 
   return (
-    <section className="py-16 px-6 bg-neutral-50">
+    <section className="py-16 px-6 bg-gradient-to-b from-black via-slate-950 to-black">
       <div className="max-w-6xl mx-auto text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-50 tracking-tight">
           What We Offer
         </h2>
-        <p className="text-neutral-600 mt-3 text-base md:text-lg">
+        <p className="text-gray-300 mt-3 text-base md:text-lg">
           Professionals across logistics, healthcare, IT, and operations.
         </p>
       </div>
@@ -38,16 +38,16 @@ const IndustryCards = () => {
         {industries.map((ind, i) => (
           <motion.div
             key={ind.title}
-            className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200"
+            className="bg-slate-900/80 rounded-xl p-6 shadow-xl border border-white/10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15, duration: 0.4 }}
           >
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-50 mb-2">
               {ind.title}
             </h3>
-            <p className="text-neutral-600 text-sm">{ind.desc}</p>
+            <p className="text-gray-300 text-sm">{ind.desc}</p>
           </motion.div>
         ))}
       </div>

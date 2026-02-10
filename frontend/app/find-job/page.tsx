@@ -56,7 +56,7 @@ export default function FindJobPage() {
             </li>
             <li className="flex items-start gap-3">
               <ClipboardList className="text-blue-500 w-5 h-5 mt-1" />
-              <span>Warehouse Staffing – Pickers, Packers, Inventory, Forklift Operators</span>
+              <span>Back Office Support – Admin Assistants, Data Entry, Customer Support</span>
             </li>
           </ul>
 

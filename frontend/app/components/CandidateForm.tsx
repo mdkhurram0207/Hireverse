@@ -103,6 +103,7 @@ export default function CandidateForm() {
           <option value="">Select Category</option>
           <option value="Tech">Tech</option>
           <option value="Driving">Driving</option>
+          <option value="Warehouse">Warehouse</option>
           <option value="Healthcare">Healthcare</option>
         </motion.select>
         <motion.input
