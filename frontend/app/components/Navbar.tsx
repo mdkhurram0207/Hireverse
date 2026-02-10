@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-black text-white px-4 py-4 shadow-lg sticky top-0 z-50">
+    <nav className="bg-white text-neutral-900 px-4 py-3 shadow-sm border-b border-neutral-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo + Title + Tagline */}
@@ -33,10 +33,10 @@ export default function Navbar() {
               className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full"
             />
             <div className="flex flex-col">
-              <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 text-transparent bg-clip-text">
+              <h1 className="text-lg md:text-xl font-semibold text-neutral-900 tracking-tight">
                 Hireverse Global
               </h1>
-              <p className="text-[0.65rem] md:text-xs text-gray-400">
+              <p className="text-[0.65rem] md:text-xs text-neutral-500">
                 Connecting Talent Worldwide
               </p>
             </div>
@@ -49,12 +49,12 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="relative group transition duration-300"
+                className="relative group transition-colors duration-200"
               >
-                <span className="group-hover:text-blue-400 transition duration-300">
+                <span className="group-hover:text-neutral-900 transition-colors duration-200">
                   {link.label}
                 </span>
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-neutral-900 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
@@ -72,17 +72,17 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-gradient-to-b from-black to-gray-900 px-4 pt-4 pb-6 space-y-4 text-sm font-medium rounded-b-lg shadow-xl"
-            initial={{ opacity: 0, y: -20 }}
+            className="md:hidden bg-white border-b border-neutral-200 px-4 pt-3 pb-4 space-y-3 text-sm font-medium shadow-sm"
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block hover:text-orange-400 transition"
+                className="block text-neutral-700 hover:text-neutral-900 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

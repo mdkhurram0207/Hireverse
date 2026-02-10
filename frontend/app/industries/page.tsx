@@ -1,5 +1,12 @@
 "use client";
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve | Logistics, Warehouse, IT & Healthcare",
+  description:
+    "Explore how Hireverse Global supports logistics & transportation, warehouse staffing, cybersecurity & cloud, and healthcare staffing across North America and Australia.",
+};
 
 const industries = [
   {
@@ -9,10 +16,10 @@ const industries = [
     image: "/trk1.png",
   },
   {
-    title: "Back Office & Admin Support",
+    title: "Warehouse Staffing",
     description:
-      "Hire expert administrative professionals, HR coordinators, executive assistants, and customer service reps. From managing day-to-day operations to supporting leadership and client communication, our talent boosts efficiency and streamlines internal workflows. We help organizations scale administrative needs without compromising on quality.",
-    image: "/back.png",
+      "We provide trained and dependable warehouse professionals for fulfillment centers, distribution hubs, and 3PL operations across the USA, Canada, and Australia. Our workforce supports picking, packing, inventory control, material handling, and shipping while following OSHA, WH&S, and local safety standards. From seasonal peaks to long-term needs, we deliver flexible, pre-screened staff who are ready to meet productivity and compliance requirements from day one.",
+    image: "/back.jpg",
   },
   {
     title: "Cybersecurity & Cloud",

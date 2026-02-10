@@ -1,5 +1,12 @@
-"use client";
+ "use client";
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
+
+export const metadata: Metadata = {
+  title: "About Hireverse Global | Warehouse & Specialist Staffing Partner",
+  description:
+    "Learn about Hireverse Global, a staffing partner focused on warehouse staffing, CDL drivers, IT, and healthcare professionals with a compliance-first, people-centered approach.",
+};
 
 export default function AboutPage() {
   return (
@@ -16,7 +23,7 @@ export default function AboutPage() {
           Empowering Workforces. Connecting Futures.
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed mt-4">
-          Hireverse Global is your strategic staffing partner — connecting top-tier talent with leading companies across technology, transportation, healthcare, and back-office support.
+          Hireverse Global is your strategic staffing partner — connecting top-tier talent with leading companies across technology, transportation, healthcare, and warehouse staffing.
         </p>
         <div className="w-24 h-1 mt-6 bg-blue-500 mx-auto rounded-full" />
       </motion.section>
@@ -72,8 +79,8 @@ export default function AboutPage() {
             <p>Registered Nurses (RNs), Certified Nursing Assistants (CNAs), Caregivers, Medical Assistants</p>
           </div>
           <div>
-            <h3 className="text-white font-medium mb-1">Back Office Support</h3>
-            <p>Administrative Professionals, Customer Service Reps, Data Entry Specialists</p>
+            <h3 className="text-white font-medium mb-1">Warehouse Staffing</h3>
+            <p>Warehouse Associates, Forklift Operators, Inventory Clerks, Shipping & Receiving Staff</p>
           </div>
         </div>
       </motion.section>

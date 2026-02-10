@@ -9,33 +9,33 @@ const stats = [
     value: 500,
     label: "Hires",
     suffix: "+",
-    icon: <BarChart className="w-5 h-5 text-blue-400" />,
+    icon: <BarChart className="w-5 h-5 text-neutral-700" />,
   },
   {
     value: 24,
     label: "Turnaround",
     suffix: "hr",
-    icon: <Clock className="w-5 h-5 text-blue-400" />,
+    icon: <Clock className="w-5 h-5 text-neutral-700" />,
   },
   {
     value: 100,
     label: "Compliance",
     suffix: "%",
-    icon: <ShieldCheck className="w-5 h-5 text-blue-400" />,
+    icon: <ShieldCheck className="w-5 h-5 text-neutral-700" />,
   },
   {
     value: 4.8,
     label: "Rating",
     suffix: "/5",
-    icon: <Star className="w-5 h-5 text-blue-400" />,
+    icon: <Star className="w-5 h-5 text-neutral-700" />,
   },
 ];
 
 const StatsSection = () => {
   return (
-    <section className="bg-black text-white py-12 px-4">
+    <section className="bg-white text-neutral-900 py-12 px-4 border-b border-neutral-200">
       <motion.h2
-        className="text-center text-3xl md:text-4xl font-semibold mb-10 bg-white text-transparent bg-clip-text"
+        className="text-center text-3xl md:text-4xl font-semibold mb-8 tracking-tight"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -54,16 +54,16 @@ const StatsSection = () => {
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
-            className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl px-4 py-6 text-center hover:scale-[1.02] transition duration-300 ease-in-out"
+            className="bg-white border border-neutral-200 rounded-lg px-4 py-6 text-center shadow-sm"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.12, duration: 0.4 }}
           >
             <div className="flex justify-center mb-2">{stat.icon}</div>
-            <div className="text-2xl font-bold text-blue-400">
+            <div className="text-2xl font-semibold text-neutral-900">
               <AnimatedCount value={stat.value} suffix={stat.suffix} />
             </div>
-            <p className="mt-1 text-xs text-gray-400 uppercase tracking-wide">
+            <p className="mt-1 text-xs text-neutral-500 uppercase tracking-wide">
               {stat.label}
             </p>
           </motion.div>

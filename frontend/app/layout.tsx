@@ -16,8 +16,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hireverse Global",
-  description: "Elite staffing in DevOps, Cybersecurity, CDL, and Healthcare",
+  metadataBase: new URL("https://hireverseglobal.in"),
+  title: {
+    default: "Hireverse Global | Warehouse & Specialist Staffing",
+    template: "%s | Hireverse Global",
+  },
+  description:
+    "Hireverse Global provides warehouse staffing, CDL drivers, IT, and healthcare professionals across the USA, Canada, and Australia.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -28,6 +33,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    url: "https://hireverseglobal.in",
+    title: "Hireverse Global | Warehouse & Specialist Staffing",
+    description:
+      "Warehouse staffing, CDL drivers, IT, and healthcare professionals for fulfillment centers, logistics, and healthcare providers.",
+    siteName: "Hireverse Global",
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans bg-black text-white">
+      <body className="font-sans bg-neutral-50 text-neutral-900">
         <Navbar />
         {children}
         <Footer />

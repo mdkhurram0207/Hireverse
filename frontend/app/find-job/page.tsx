@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
 import CandidateForm from "../components/CandidateForm";
 import {
@@ -11,6 +12,12 @@ import {
   TrendingUp,
   ClipboardList,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Find a Job | Warehouse, CDL, IT & Healthcare Roles",
+  description:
+    "Search for warehouse, CDL driving, IT, and healthcare roles with Hireverse Global. Submit your profile and get matched with verified employers.",
+};
 
 export default function FindJobPage() {
   return (
@@ -56,7 +63,7 @@ export default function FindJobPage() {
             </li>
             <li className="flex items-start gap-3">
               <ClipboardList className="text-blue-500 w-5 h-5 mt-1" />
-              <span>Back Office Support – Admin Assistants, Data Entry, Customer Support</span>
+              <span>Warehouse Staffing – Pickers, Packers, Inventory, Forklift Operators</span>
             </li>
           </ul>
 
