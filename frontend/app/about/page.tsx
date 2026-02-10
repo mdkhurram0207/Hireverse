@@ -1,12 +1,5 @@
- "use client";
-import type { Metadata } from "next";
+"use client";
 import { motion } from "framer-motion";
-
-export const metadata: Metadata = {
-  title: "About Hireverse Global | Warehouse & Specialist Staffing Partner",
-  description:
-    "Learn about Hireverse Global, a staffing partner focused on warehouse staffing, CDL drivers, IT, and healthcare professionals with a compliance-first, people-centered approach.",
-};
 
 export default function AboutPage() {
   return (

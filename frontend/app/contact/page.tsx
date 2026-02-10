@@ -1,18 +1,11 @@
 "use client";
 
-import type { Metadata } from "next";
 import { motion } from "framer-motion";
 import { TfiEmail } from "react-icons/tfi";
 import { BsWhatsapp } from "react-icons/bs";
 import { Linkedin, Globe, Send } from "lucide-react";
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import emailjs from "emailjs-com";
-
-export const metadata: Metadata = {
-  title: "Contact Hireverse Global",
-  description:
-    "Contact Hireverse Global for warehouse staffing, CDL drivers, IT and healthcare talent via email, WhatsApp, Telegram, or the contact form.",
-};
 
 interface FormData {
   name: string;

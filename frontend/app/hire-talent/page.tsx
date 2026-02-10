@@ -1,15 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
 import HireForm from "@/app/components/HireForm";
 import { motion } from "framer-motion";
 import { ShieldCheck, CloudLightning, BadgeCheck, Brain } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Hire Talent | Warehouse, CDL, IT & Healthcare Staffing",
-  description:
-    "Share your hiring needs with Hireverse Global. We provide pre-vetted warehouse staff, CDL drivers, IT and healthcare professionals with fast, compliant placement.",
-};
 
 export default function HireTalentPage() {
   return (

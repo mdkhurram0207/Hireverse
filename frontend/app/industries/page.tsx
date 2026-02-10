@@ -1,12 +1,5 @@
 "use client";
-import type { Metadata } from "next";
 import { motion } from "framer-motion";
-
-export const metadata: Metadata = {
-  title: "Industries We Serve | Logistics, Warehouse, IT & Healthcare",
-  description:
-    "Explore how Hireverse Global supports logistics & transportation, warehouse staffing, cybersecurity & cloud, and healthcare staffing across North America and Australia.",
-};
 
 const industries = [
   {

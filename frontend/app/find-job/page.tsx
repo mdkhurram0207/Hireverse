@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { motion } from "framer-motion";
 import CandidateForm from "../components/CandidateForm";
 import {
@@ -12,12 +11,6 @@ import {
   TrendingUp,
   ClipboardList,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Find a Job | Warehouse, CDL, IT & Healthcare Roles",
-  description:
-    "Search for warehouse, CDL driving, IT, and healthcare roles with Hireverse Global. Submit your profile and get matched with verified employers.",
-};
 
 export default function FindJobPage() {
   return (
